@@ -8,22 +8,22 @@
 #define SPRITE_RUN1 1
 #define SPRITE_RUN2 2
 #define SPRITE_JUMP 3
-#define SPRITE_JUMP_UPPER '.'         // Use the '.' character for the head
+#define SPRITE_JUMP_UPPER '.'         // Uses the . character for the head
 #define SPRITE_JUMP_LOWER 4
-#define SPRITE_TERRAIN_EMPTY ' '      // User the ' ' character
+#define SPRITE_TERRAIN_EMPTY ' '      // Uses the ' ' character
 #define SPRITE_TERRAIN_SOLID 5
 #define SPRITE_TERRAIN_SOLID_RIGHT 6
 #define SPRITE_TERRAIN_SOLID_LEFT 7
 
-#define HERO_HORIZONTAL_POSITION 1    // Horizontal position of hero on screen
+#define HERO_HORIZONTAL_POSITION 1    // Horizontal position of runner on screen
 
 #define TERRAIN_WIDTH 16
 #define TERRAIN_EMPTY 0
 #define TERRAIN_LOWER_BLOCK 1
 #define TERRAIN_UPPER_BLOCK 2
 
-#define HERO_POSITION_OFF 0          // Hero is invisible
-#define HERO_POSITION_RUN_LOWER_1 1  // Hero is running on lower row (pose 1)
+#define HERO_POSITION_OFF 0          // runner is invisible
+#define HERO_POSITION_RUN_LOWER_1 1  // runner is running on lower row (pose 1)
 #define HERO_POSITION_RUN_LOWER_2 2  //                              (pose 2)
 
 #define HERO_POSITION_JUMP_1 3       // Starting a jump
@@ -35,13 +35,13 @@
 #define HERO_POSITION_JUMP_7 9       // Half-way down
 #define HERO_POSITION_JUMP_8 10      // About to land
 
-#define HERO_POSITION_RUN_UPPER_1 11 // Hero is running on upper row (pose 1)
+#define HERO_POSITION_RUN_UPPER_1 11 // Runner is running on upper row (pose 1)
 #define HERO_POSITION_RUN_UPPER_2 12 //                              (pose 2)
 
-LiquidCrystal lcd(11, 9, 6, 5, 4, 3);
-static char terrainUpper[TERRAIN_WIDTH + 1];
-static char terrainLower[TERRAIN_WIDTH + 1];
-static bool buttonPushed = false;
+LiquidCrystal lcd(11, 9, 6, 5, 4, 3);  //Arduino ports
+static char terrainUpper[TERRAIN_WIDTH + 1]; // the upper obstacles
+static char terrainLower[TERRAIN_WIDTH + 1];  // lower obstacles
+static bool buttonPushed = false;   // sets button to unpressed
 
 void initializeGraphics(){
   static byte graphics[] = {
